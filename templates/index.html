@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Audio Converter</title>
+</head>
+<body>
+    <h1>Text to Audio Converter</h1>
+    <form method="POST">
+        <textarea name="text" rows="10" cols="30" placeholder="Enter text here"></textarea>
+        <br>
+        <button type="submit">Convert to Audio</button>
+    </form>
+
+    <!-- Audio Player -->
+    {% if audio_file %}
+    <h3>Audio Output:</h3>
+    <audio controls autoplay>
+        <source src="{{ audio_file }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+</body>
+</html>
